@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-6</title>
+<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <body class="min-h-screen bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 flex items-center justify-center p-6">
+        <div class="bg-white/20 backdrop-blur-lg shadow-2xl rounded-3xl p-8 w-full max-w-4xl border border-white/30">
+       <div>
+        <h1 class="text-4xl font-extrabold text-center text-white mb-2">Practical No.6</h1>
+        <h3 class="text-2xl font-semibold text-center text-white mb-8">Marks Calculator</h3>
+        <table style="border: 1px"  cellspacing="3" cellpadding="3">
+            <table class="w-full bg-white rounded-xl overflow-hidden shadow-lg">
+                <tr class="bg-slate-600 text-white">
+                    <th class="p-3 border">Sr.No</th>
+                    <th class="p-3 border">Subject</th>
+                    <th class="p-3 border">Marks</th>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="border p-2">1</td>
+                    <td class="border p-2">oop</td>
+                    <td class="border p-2"><input type="number" id="s1" placeholder="Enter Marks" class="w-full p-2 border border-gray-300 rounded-lg"></td>
+                </tr>
+                <tr>
+                    <td class="border p-2">2</td>
+                    <td class="border p-2">AP</td>
+                    <td class="border p-2"><input type="number" id="s2" placeholder="Enter Marks" class="w-full p-2 border border-gray-300 rounded-lg"></td>
+                </tr>
+                <tr>
+                    <td class="border p-2">3</td>
+                    <td class="border p-2">CAO</td>
+                    <td class="border p-2"><input type="number" id="s3" placeholder="Enter Marks" class="w-full p-2 border border-gray-300 rounded-lg"></td>
+                </tr>
+                <tr>
+                    <td class="border p-2">4</td>
+                    <td class="border p-2">WEB-D</td>
+                    <td class="border p-2"><input type="number" id="s4" placeholder="Enter Marks" class="w-full p-2 border border-gray-300 rounded-lg"></td>
+                </tr>
+                <tr>
+                    <td class="border p-2">5</td>
+                    <td class="border p-2">DSA</td>
+                    <td class="border p-2"><input type="number" id="s5" placeholder="Enter Marks" class="w-full p-2 border border-gray-300 rounded-lg"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <button onclick="calculateGrade()"
+                        class="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-800 hover:scale-105 hover:shadow-2xl transition-all duration-300"> Calculate </button>
+                    
+                    </td>
+                </tr>
+            </table>
+          <br><br>
+             <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <h2 class="text-lg font-bold text-orange-600">Total Marks</h2>
+        <h1 id="totalmarks" class="text-3xl font-bold mt-2"></h1>
+    </div>
+         <br><br>
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <h2 class="text-lg font-bold text-pink-600">Percentage</h2>
+        <h1 id="per" class="text-3xl font-bold mt-2"></h1>
+    </div>
+      <br><br>
+             <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+        <h2 class="text-lg font-bold text-purple-600">Grade</h2>
+        <h1 id="grade" class="text-3xl font-bold mt-2"></h1>
+    </div>
+       </div>
+            </div>
+        </div>
+<br>
+<br>
+<script>
+function calculateGrade() {
+    let s1 = Number(document.getElementById("s1").value);
+    let s2 = Number(document.getElementById("s2").value);
+    let s3 = Number(document.getElementById("s3").value);
+    let s4 = Number(document.getElementById("s4").value);
+    let s5 = Number(document.getElementById("s5").value);
+    let Grade=null;
+    let totalMarks = s1 + s2 +s3+ s4 + s5;
+    let percent =(totalMarks/500)*100;
+    if(percent>= 75){
+        Grade = "A";
+    }
+    else if(percent>= 65 ){
+        Grade = "B";
+    }
+    else if(percent>= 65 ){
+        Grade = "B";
+    }
+    else if(percent>= 50 ){
+        Grade = "C";
+    }
+    else if(percent>= 40 ){
+        Grade = "D";
+    }
+    else{
+        Grade = "F";
+    }
+    
+    document.getElementById("totalmarks").innerHTML = totalMarks;
+    document.getElementById("per").innerHTML = percent;
+    document.getElementById("grade").innerHTML = Grade;
+    }
+</script></head>
+</body>
+</html>
