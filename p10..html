@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Attendance Tracker</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="bg-blue-700 text-white shadow-lg">
+
+        <div class="max-w-6xl mx-auto px-5 py-7">
+
+            <h1 class="text-3xl md:text-4xl font-bold">
+                📋 Student Attendance Tracker
+            </h1>
+
+            <p class="mt-2 text-blue-100">
+                Manage student attendance easily and efficiently
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="max-w-6xl mx-auto px-5 py-8">
+
+
+        <!-- ================= ADD STUDENT ================= -->
+
+        <section class="bg-white rounded-2xl shadow-md p-6 mb-7">
+
+            <h2 class="text-xl font-bold text-gray-800 mb-5">
+                ➕ Add Student
+            </h2>
+
+            <div class="flex flex-col md:flex-row gap-4">
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student name"
+                    class="flex-1 border border-gray-300 rounded-xl
+                    px-4 py-3 focus:outline-none
+                    focus:ring-2 focus:ring-blue-500"
+                >
+
+                <button
+                    onclick="addStudent()"
+                    class="bg-blue-600 text-white px-7 py-3
+                    rounded-xl font-semibold hover:bg-blue-700
+                    transition"
+                >
+                    Add Student
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-7">
+
+
+            <!-- Total Students -->
+
+            <div class="bg-white rounded-2xl shadow-md p-6">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+
+                        <p class="text-gray-500">
+                            Total Students
+                        </p>
+
+                        <p
+                            id="totalStudents"
+                            class="text-3xl font-bold text-blue-600 mt-2"
+                        >
+                            0
+                        </p>
+
+                    </div>
+
+                    <div class="text-4xl">
+                        👨‍🎓
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Present -->
+
+            <div class="bg-white rounded-2xl shadow-md p-6">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+
+                        <p class="text-gray-500">
+                            Present
+                        </p>
+
+                        <p
+                            id="presentStudents"
+                            class="text-3xl font-bold text-green-600 mt-2"
+                        >
+                            0
+                        </p>
+
+                    </div>
+
+                    <div class="text-4xl">
+                        ✅
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Absent -->
+
+            <div class="bg-white rounded-2xl shadow-md p-6">
+
+                <div class="flex justify-between items-center">
+
+                    <div>
+
+                        <p class="text-gray-500">
+                            Absent
+                        </p>
+
+                        <p
+                            id="absentStudents"
+                            class="text-3xl font-bold text-red-600 mt-2"
+                        >
+                            0
+                        </p>
+
+                    </div>
+
+                    <div class="text-4xl">
+                        ❌
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="mb-6">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search student..."
+                oninput="displayStudents()"
+                class="w-full bg-white border border-gray-300
+                rounded-xl px-4 py-3 focus:outline-none
+                focus:ring-2 focus:ring-blue-500"
+            >
+
+        </section>
+
+
+
+        <!-- ================= ATTENDANCE TABLE ================= -->
+
+        <section class="bg-white rounded-2xl shadow-md overflow-hidden">
+
+            <div class="p-6 border-b">
+
+                <h2 class="text-xl font-bold text-gray-800">
+                    📊 Attendance Record
+                </h2>
+
+            </div>
+
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full">
+
+                    <thead class="bg-gray-100">
+
+                        <tr>
+
+                            <th class="text-left px-6 py-4">
+                                Student Name
+                            </th>
+
+                            <th class="text-left px-6 py-4">
+                                Attendance
+                            </th>
+
+                            <th class="text-left px-6 py-4">
+                                Percentage
+                            </th>
+
+                            <th class="text-left px-6 py-4">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="studentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Empty Message -->
+
+            <div
+                id="emptyMessage"
+                class="text-center py-12 text-gray-500"
+            >
+
+                <div class="text-5xl mb-3">
+                    👨‍🎓
+                </div>
+
+                <p class="text-lg">
+                    No students added yet.
+                </p>
+
+                <p class="text-sm mt-1">
+                    Add a student to start taking attendance.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Store students
+        let students = [];
+
+
+        // ================= ADD STUDENT =================
+
+        function addStudent() {
+
+            const input =
+                document.getElementById("studentName");
+
+            const name =
+                input.value.trim();
+
+
+            // Check empty name
+            if (name === "") {
+
+                alert("Please enter student name.");
+
+                return;
+            }
+
+
+            // Create student
+            const student = {
+
+                id: Date.now(),
+
+                name: name,
+
+                // Initially no status is selected
+                status: "Not Marked",
+
+                presentDays: 0,
+
+                absentDays: 0,
+
+                totalDays: 0
+
+            };
+
+
+            students.push(student);
+
+
+            // Clear input
+            input.value = "";
+
+
+            displayStudents();
+
+        }
+
+
+
+        // ================= DISPLAY STUDENTS =================
+
+        function displayStudents() {
+
+            const table =
+                document.getElementById("studentTable");
+
+            const emptyMessage =
+                document.getElementById("emptyMessage");
+
+
+            const search =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            // Search
+            const filteredStudents =
+                students.filter(student =>
+                    student.name
+                        .toLowerCase()
+                        .includes(search)
+                );
+
+
+            table.innerHTML = "";
+
+
+            // Empty state
+            if (filteredStudents.length === 0) {
+
+                emptyMessage.style.display = "block";
+
+            } else {
+
+                emptyMessage.style.display = "none";
+
+            }
+
+
+            // Create rows
+            filteredStudents.forEach(student => {
+
+                let percentage = 0;
+
+
+                if (student.totalDays > 0) {
+
+                    percentage =
+                        (student.presentDays /
+                        student.totalDays) * 100;
+
+                }
+
+
+                const row =
+                    document.createElement("tr");
+
+
+                row.className =
+                    "border-b hover:bg-gray-50";
+
+
+                row.innerHTML = `
+
+                    <!-- NAME -->
+
+                    <td class="px-6 py-5 font-semibold text-gray-800">
+                        ${student.name}
+                    </td>
+
+
+                    <!-- ATTENDANCE OPTIONS -->
+
+                    <td class="px-6 py-5">
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <!-- PRESENT BUTTON -->
+
+                            <button
+                                onclick="markPresent(${student.id})"
+                                class="px-4 py-2 rounded-lg font-medium
+                                transition
+                                ${
+                                    student.status === "Present"
+                                    ? "bg-green-600 text-white"
+                                    : "bg-green-100 text-green-700 hover:bg-green-200"
+                                }"
+                            >
+                                ✓ Present
+                            </button>
+
+
+                            <!-- ABSENT BUTTON -->
+
+                            <button
+                                onclick="markAbsent(${student.id})"
+                                class="px-4 py-2 rounded-lg font-medium
+                                transition
+                                ${
+                                    student.status === "Absent"
+                                    ? "bg-red-600 text-white"
+                                    : "bg-red-100 text-red-700 hover:bg-red-200"
+                                }"
+                            >
+                                ✕ Absent
+                            </button>
+
+                        </div>
+
+
+                        <!-- CURRENT STATUS -->
+
+                        <p class="text-sm mt-2">
+
+                            Status:
+
+                            <span class="font-semibold
+                                ${
+                                    student.status === "Present"
+                                    ? "text-green-600"
+                                    : student.status === "Absent"
+                                    ? "text-red-600"
+                                    : "text-gray-500"
+                                }"
+                            >
+
+                                ${student.status}
+
+                            </span>
+
+                        </p>
+
+                    </td>
+
+
+                    <!-- PERCENTAGE -->
+
+                    <td class="px-6 py-5">
+
+                        <div class="w-32 bg-gray-200
+                                    rounded-full h-3">
+
+                            <div
+                                class="bg-blue-600 h-3
+                                rounded-full"
+                                style="width: ${percentage}%"
+                            >
+                            </div>
+
+                        </div>
+
+                        <p class="text-sm text-gray-600 mt-1">
+                            ${percentage.toFixed(1)}%
+                        </p>
+
+                    </td>
+
+
+                    <!-- DELETE -->
+
+                    <td class="px-6 py-5">
+
+                        <button
+                            onclick="deleteStudent(${student.id})"
+                            class="bg-gray-800 text-white
+                            px-4 py-2 rounded-lg
+                            hover:bg-gray-900"
+                        >
+                            Delete
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                table.appendChild(row);
+
+            });
+
+
+            updateStatistics();
+
+        }
+
+
+
+        // ================= MARK PRESENT =================
+
+        function markPresent(id) {
+
+            const student =
+                students.find(
+                    student => student.id === id
+                );
+
+
+            if (!student) return;
+
+
+            // If already absent for today,
+            // remove that previous attendance
+            if (student.status === "Absent") {
+
+                student.absentDays--;
+
+            }
+
+
+            // Only increase present if
+            // status was not already Present
+            if (student.status !== "Present") {
+
+                student.presentDays++;
+
+                student.totalDays++;
+
+            }
+
+
+            student.status = "Present";
+
+
+            displayStudents();
+
+        }
+
+
+
+        // ================= MARK ABSENT =================
+
+        function markAbsent(id) {
+
+            const student =
+                students.find(
+                    student => student.id === id
+                );
+
+
+            if (!student) return;
+
+
+            // If already present for today,
+            // change present to absent
+            if (student.status === "Present") {
+
+                student.presentDays--;
+
+            }
+
+
+            // Increase absent only if
+            // not already absent
+            if (student.status !== "Absent") {
+
+                student.absentDays++;
+
+                student.totalDays++;
+
+            }
+
+
+            student.status = "Absent";
+
+
+            displayStudents();
+
+        }
+
+
+
+        // ================= DELETE STUDENT =================
+
+        function deleteStudent(id) {
+
+            students =
+                students.filter(
+                    student => student.id !== id
+                );
+
+
+            displayStudents();
+
+        }
+
+
+
+        // ================= STATISTICS =================
+
+        function updateStatistics() {
+
+            const total =
+                students.length;
+
+
+            const present =
+                students.filter(
+                    student =>
+                    student.status === "Present"
+                ).length;
+
+
+            const absent =
+                students.filter(
+                    student =>
+                    student.status === "Absent"
+                ).length;
+
+
+            document.getElementById(
+                "totalStudents"
+            ).textContent = total;
+
+
+            document.getElementById(
+                "presentStudents"
+            ).textContent = present;
+
+
+            document.getElementById(
+                "absentStudents"
+            ).textContent = absent;
+
+        }
+
+
+
+        // Initial display
+        displayStudents();
+
+    </script>
+
+</body>
+
+</html>
