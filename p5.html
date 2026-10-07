@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SwaadGhar Kitchen | Indian Vegetarian Restaurant</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-orange-50 text-slate-800 antialiased">
+
+    <!--  NAVIGATION BAR-->
+    <header
+        class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-orange-100 shadow-sm">
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#hero" class="flex items-center gap-3">
+
+                <div
+                    class="w-12 h-12 rounded-2xl bg-gradient-to-br from-orange-500 via-red-500 to-yellow-500 flex items-center justify-center text-white shadow-lg">
+
+                    <i class="fa-solid fa-utensils text-xl"></i>
+
+                </div>
+                <div>
+                    <span
+                        class="font-extrabold text-2xl bg-gradient-to-r from-orange-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">
+                        SwaadGhar Kitchen
+                    </span>
+                    <span
+                        class="block text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                        Authentic Indian Vegetarian Food
+                    </span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav
+                class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+                <a href="#hero"
+                    class="hover:text-orange-600 transition">
+                    Home
+                </a>
+                <a href="#menu"
+                    class="hover:text-orange-600 transition">
+                    Our Menu
+                </a>
+                <a href="#about"
+                    class="hover:text-orange-600 transition">
+                    About Us
+                </a>
+                <a href="#contact"
+                    class="hover:text-orange-600 transition">
+                    Contact
+                </a>
+            </nav>
+
+            <!-- Menu Button -->
+            <a href="#menu"
+                class="px-6 py-2.5 rounded-full bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 hover:from-orange-600 hover:to-red-600 text-white font-bold text-sm shadow-lg transition-all hover:-translate-y-0.5">
+                View Menu
+            </a>
+        </div>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section id="hero"
+        class="relative py-20 lg:py-28 bg-gradient-to-br from-orange-100 via-yellow-50 to-red-100 overflow-hidden">
+        <!-- Background Decorations -->
+        <div
+            class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-orange-300/30 blur-3xl">
+        </div>
+        <div
+            class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-red-300/20 blur-3xl">
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <span
+                class="inline-block px-5 py-2 rounded-full bg-white border border-orange-200 text-orange-600 text-xs font-bold uppercase tracking-wider shadow-sm">
+                🍽️ Authentic Indian Taste
+            </span>
+            <h1
+                class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight max-w-4xl mx-auto">
+                Delicious Food,
+                <span
+                    class="bg-gradient-to-r from-orange-600 via-red-600 to-yellow-500 bg-clip-text text-transparent">
+                    Happy Moments
+                </span>
+            </h1>
+            <p
+                class="mt-5 text-slate-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Welcome to SwaadGhar Kitchen — your destination for
+                fresh, flavorful and authentic Indian vegetarian food
+                prepared with love and traditional spices.
+            </p>
+
+            <!-- Highlights -->
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <span
+                    class="px-5 py-2.5 rounded-full bg-white border border-orange-200 shadow-sm text-sm font-semibold">
+                    🌱 100% Vegetarian
+                </span>
+                <span
+                    class="px-5 py-2.5 rounded-full bg-white border border-orange-200 shadow-sm text-sm font-semibold">
+                    👨‍🍳 Freshly Prepared
+                </span>
+                <span
+                    class="px-5 py-2.5 rounded-full bg-white border border-orange-200 shadow-sm text-sm font-semibold">
+                    🌶️ Authentic Spices
+                </span>
+            </div>
+
+            <!-- Hero Button -->
+            <div class="mt-8">
+                <a href="#menu"
+                    class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold shadow-lg hover:scale-105 transition">
+                    Explore Our Menu
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu"
+        class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Menu Heading -->
+        <div class="text-center mb-14">
+            <span
+                class="text-orange-600 font-bold text-sm uppercase tracking-widest">
+                Our Specialities
+            </span>
+            <h2
+                class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900">
+                Customer Favourites
+            </h2>
+            <div
+                class="mt-4 w-24 h-1.5 bg-gradient-to-r from-orange-500 via-red-500 to-yellow-500 mx-auto rounded-full">
+            </div>
+            <p
+                class="mt-4 text-slate-500 text-sm max-w-xl mx-auto">
+                Enjoy our carefully prepared vegetarian dishes
+                made using fresh ingredients and authentic Indian flavours.
+            </p>
+        </div>
+
+        <!-- FOOD GRID -->
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- CARD 1 -->
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <!-- Image -->
+                <div class="relative h-60 overflow-hidden">
+                    <img src="Paneer-Tikka.jpg"
+                        alt="Paneer Tikka"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold">
+                        Chef's Special
+                    </span>
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+                        ₹299
+                    </span>
+                </div>
+                <!-- Content -->
+                <div class="p-6">
+                    <div class="text-yellow-500 text-xs mb-2">
+                        ★★★★★
+                        <span class="text-slate-500 ml-2">
+                            4.9 (180+ reviews)
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        Paneer Tikka
+                    </h3>
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+                        Soft paneer cubes marinated with aromatic
+                        spices and grilled to perfection.
+                    </p>
+                </div>
+                <!-- Button -->
+                <div class="px-6 pb-6">
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold transition">
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="Vegetable-Biryani.jpg"
+                        alt="Vegetable Biryani"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-500 to-yellow-500 text-white text-xs font-bold">
+                        Best Seller
+                    </span>
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+                        ₹249
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="text-yellow-500 text-xs mb-2">
+                        ★★★★★
+                        <span class="text-slate-500 ml-2">
+                            4.8 (220+ reviews)
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        Vegetable Biryani
+                    </h3>
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+                        Fragrant basmati rice cooked with fresh
+                        vegetables,herbs & traditional biryani spices.
+                    </p>
+                </div>
+                <div class="px-6 pb-6">
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-red-500 to-yellow-500 hover:from-red-600 hover:to-orange-500 text-white font-bold transition">
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+                        Order Now
+                    </button>
+                </div>
+            </div>
+
+            <!--CARD 3 -->
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                <div class="relative h-60 overflow-hidden">
+                    <img src="Paneer-Do-Pyaza.png"
+                        alt="Paneer Do Pyaza"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white text-xs font-bold">
+                        North Indian Special
+                    </span>
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+                        ₹279
+                    </span>
+                </div>
+                <div class="p-6">
+                    <div class="text-yellow-500 text-xs mb-2">
+                        ★★★★★
+                        <span class="text-slate-500 ml-2">
+                            4.9 (200+ reviews)
+
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900">
+
+                        Paneer Do Pyaza
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+
+                        Soft paneer cubes cooked with onions,
+                        tomatoes & aromatic Indian spices in gravy.
+
+                    </p>
+
+                </div>
+
+
+                <div class="px-6 pb-6">
+
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold transition">
+
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!--CARD 4 -->
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+
+                <div class="relative h-60 overflow-hidden">
+
+                    <img src="Lachha-Tokri.jpg"
+                        alt="Lachha Tokri"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white text-xs font-bold">
+
+                        Chef's Favourite
+
+                    </span>
+
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+
+                        ₹259
+
+                    </span>
+
+                </div>
+
+
+                <div class="p-6">
+
+                    <div class="text-yellow-500 text-xs mb-2">
+
+                        ★★★★★
+
+                        <span class="text-slate-500 ml-2">
+
+                            4.8 (160+ reviews)
+
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900">
+
+                        Lachha Tokri
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+
+                        Crispy potato basket filled with fresh vegetables,
+                        tangy sauces & flavorful toppings.
+
+                    </p>
+
+                </div>
+
+
+                <div class="px-6 pb-6">
+
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold transition">
+
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+
+                <div class="relative h-60 overflow-hidden">
+
+                    <img src="rabri-rabdi.jpg"
+                        alt="Kesar Mava Rabri"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold">
+
+                        Royal Dessert
+
+                    </span>
+
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+
+                        ₹189
+
+                    </span>
+
+                </div>
+
+
+                <div class="p-6">
+
+                    <div class="text-yellow-500 text-xs mb-2">
+
+                        ★★★★★
+
+                        <span class="text-slate-500 ml-2">
+
+                            4.9 (200+ reviews)
+
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900">
+
+                        Kesar Mava Rabri
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+
+                        Rich & creamy rabri infused with saffron,
+                        mava & dry fruits for a royal dessert experience.
+
+                    </p>
+
+                </div>
+
+
+                <div class="px-6 pb-6">
+
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold transition">
+
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+
+                        Order Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!--CARD 6 -->
+
+            <div
+                class="bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+
+                <div class="relative h-60 overflow-hidden">
+
+                    <img src="gulabjamun.webp"
+                        alt="Gulab Jamun"
+                        class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+
+                    <span
+                        class="absolute top-4 left-4 px-4 py-1.5 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold">
+
+                        Sweet Special
+
+                    </span>
+
+                    <span
+                        class="absolute bottom-4 right-4 px-4 py-1.5 rounded-xl bg-black/75 text-white font-bold">
+
+                        ₹129
+
+                    </span>
+
+                </div>
+
+
+                <div class="p-6">
+
+                    <div class="text-yellow-500 text-xs mb-2">
+
+                        ★★★★★
+
+                        <span class="text-slate-500 ml-2">
+
+                            4.9 (200+ reviews)
+
+                        </span>
+
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900">
+
+                        Gulab Jamun
+
+                    </h3>
+
+                    <p
+                        class="mt-2 text-slate-600 text-sm leading-relaxed">
+
+                        Soft and warm milk-solid dumplings soaked
+                        in fragrant and sweet sugar syrup.
+
+                    </p>
+
+                </div>
+
+
+                <div class="px-6 pb-6">
+
+                    <button
+                        class="w-full py-3 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold transition">
+
+                        <i class="fa-solid fa-cart-shopping mr-2"></i>
+
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--FEATURES -->
+
+    <section class="py-16 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div class="text-center mb-12">
+
+                <span
+                    class="text-orange-600 font-bold uppercase tracking-widest text-sm">
+
+                    Why Choose Us
+
+                </span>
+
+                <h2
+                    class="mt-2 text-3xl font-extrabold">
+
+                    What Makes Us Special?
+
+                </h2>
+
+            </div>
+
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                <!-- Feature 1 -->
+
+                <div
+                    class="p-8 text-center rounded-3xl border border-orange-100 shadow-sm hover:shadow-lg transition">
+
+                    <div
+                        class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white text-2xl">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+                    <h3 class="mt-5 font-bold text-lg">
+
+                        Fresh Ingredients
+
+                    </h3>
+
+                    <p class="mt-2 text-slate-500 text-sm">
+
+                        We use fresh vegetables, herbs and quality
+                        ingredients in every dish.
+
+                    </p>
+
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="p-8 text-center rounded-3xl border border-orange-100 shadow-sm hover:shadow-lg transition">
+                    <div
+                        class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white text-2xl">
+
+                        <i class="fa-solid fa-kitchen-set"></i>
+                    </div>
+                    <h3 class="mt-5 font-bold text-lg">
+                        Hygienic Kitchen
+                    </h3>
+                    <p class="mt-2 text-slate-500 text-sm">
+                        Clean cooking practices and hygienic preparation
+                        are our top priorities.
+                    </p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="p-8 text-center rounded-3xl border border-orange-100 shadow-sm hover:shadow-lg transition">
+
+                    <div
+                        class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-white text-2xl">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                    </div>
+
+                    <h3 class="mt-5 font-bold text-lg">
+
+                        Made With Love
+
+                    </h3>
+
+                    <p class="mt-2 text-slate-500 text-sm">
+
+                        Every dish is prepared with care to give
+                        you a memorable dining experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact"
+        class="py-16 bg-slate-900 text-white">
+
+        <div class="max-w-7xl mx-auto px-4">
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-10">            
+            <!-- Footer Bottom -->
+            <div
+                class="border-t border-slate-700 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs">
+
+                    © 2026 SwaadGhar Kitchen.
+                    All Rights Reserved.
+                </p>
+
+                <!-- Social Media -->
+                 <div class="flex items-center gap-3">
+                <a href="https://www.instagram.com/reel/DTZsc5zkQnZ/?utm_source=ig_web_button_share_sheet" aria-label="Instagram" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-gradient-to-tr hover:from-indigo-500 hover:to-blue-500 hover:text-white flex items-center justify-center text-slate-600 transition-all duration-300">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+                <a href="https://www.facebook.com/64restrobar/" aria-label="Facebook" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-gradient-to-tr hover:from-indigo-500 hover:to-blue-500 hover:text-white flex items-center justify-center text-slate-600 transition-all duration-300">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <a href="#" aria-label="Twitter / X" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-gradient-to-tr hover:from-indigo-500 hover:to-blue-500 hover:text-white flex items-center justify-center text-slate-600 transition-all duration-300">
+                    <i class="fa-brands fa-x-twitter text-sm"></i>
+                </a>
+                <a href="#" aria-label="WhatsApp" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-gradient-to-tr hover:from-indigo-500 hover:to-blue-500 hover:text-white flex items-center justify-center text-slate-600 transition-all duration-300">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
